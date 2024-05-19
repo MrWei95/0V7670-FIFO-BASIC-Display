@@ -1,10 +1,12 @@
-- 👋 Hi, I’m @MrWei95
-- 👀 I’m interested in sharing interesting projects!
-- 🌱 I’m currently learning stm32
-- https://space.bilibili.com/2004315025
-- 📫 If you hava any questions, please send email to me:mrwei95@outlook.com
+大家好，我是MrWei95！
+Bilibili主页：https://space.bilibili.com/2004315025
+如果代码有任何问题请联系我：mrwei95@outlook.com
 
-<!---
-MrWei95/MrWei95 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+我开源的这个OV7670代码也是我刚开始接触摄像头的时候完成的，很多驱动都是网上找的。
+当时的情况非常伤脑筋，我找到的源码都是屎山，里面有很多其他代码，像USART之类的本来用不上，但它们的main文件就声明了，
+这种情况使得我不得不向错误的方向去理解代码，导致很多天我都陷入找代码-看代码-看不懂再找代码的循环。
+
+我开源的这个代码基本上所有文件都会用到，不存在屎山文件，不过TFT屏幕显示的驱动中我是直接找的网上的代码，无伤大雅，主程序里调用什么函数再去看就可以了。
+
+至于为什么要用F1系列的芯片，这是因为我学32刚刚起步，只接触过F1C8T6，不过学习嘛，不管这东西做出来有什么意义，至少我做出来了，做出来的过程还是能学到很多东西的！
+大家一起加油吧！
