@@ -58,7 +58,6 @@ void LCD_Draw_Circle_8(int xc, int yc, int x, int y, uint16_t color);
 void LCD_DrawCircle(int xc, int yc,int r, uint16_t color, int fill);
 void LCD_ShowString(uint16_t x,uint16_t y,uint16_t width,uint16_t height,uint16_t font_color,uint16_t background_color,uint8_t size,uint8_t *p);
 void LCD_ShowNum(uint16_t x,uint16_t y,uint16_t font_color,uint16_t background_color,uint32_t num,uint8_t len,uint8_t size);
-//void Gui_DrawFont_GBK16(u16 x, u16 y, u16 fc, u16 bc, u8 *s);
 void LCD_DrawBMP(uint16_t x,uint16_t y, uint16_t width, uint16_t high, const unsigned char *p);
 
 #endif
