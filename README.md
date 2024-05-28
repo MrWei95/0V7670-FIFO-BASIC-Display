@@ -11,3 +11,23 @@ Bilibili主页：https://space.bilibili.com/2004315025
 
 至于为什么要用F1系列的芯片，这是因为我学32刚刚起步，只接触过F103C8T6，不过学习嘛，不管这东西做出来有什么意义，至少我做出来了，做出来的过程还是能学到很多东西的！
 大家一起加油吧！
+
+注：
+OV7670接线：
+SCL        -->        PA0
+SDA        -->        PA1
+VSY        -->        PA2
+WRST       -->        PA3
+WEN        -->        PA4
+RRST       -->        PA11
+OE         -->        PA12
+RCLK       -->        PB5
+D0 ~ D7    -->        PB8 ~ PB15
+
+TFT屏幕接线：
+SCL        -->        PA5
+SDA        -->        PA7
+RST        -->        PB0
+A0         -->        PB1
+CS         -->        PB6
+BL         -->        PB7
