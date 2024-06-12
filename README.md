@@ -1,5 +1,4 @@
 大家好，我是MrWei95！
-Bilibili主页：https://space.bilibili.com/2004315025
 大家如果代码有任何问题请联系我：mrwei95@outlook.com
 
 我开源的这个OV7670代码也是我刚开始接触摄像头的时候完成的，很多驱动都是网上找的。
