@@ -52,7 +52,7 @@
           <OutputName>project</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -689,41 +689,6 @@
               <FileName>exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Hardware\EXTI\exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>ov7670.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\OV7670\ov7670.h</FilePath>
-            </File>
-            <File>
-              <FileName>ov7670_init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Hardware\OV7670\ov7670_init.c</FilePath>
-            </File>
-            <File>
-              <FileName>SCCB.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\OV7670\SCCB.h</FilePath>
-            </File>
-            <File>
-              <FileName>font.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\ST7789\font.h</FilePath>
-            </File>
-            <File>
-              <FileName>st7789.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\ST7789\st7789.h</FilePath>
-            </File>
-            <File>
-              <FileName>timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\TIMER\timer.h</FilePath>
-            </File>
-            <File>
-              <FileName>exti.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Hardware\EXTI\exti.h</FilePath>
             </File>
           </Files>
         </Group>
