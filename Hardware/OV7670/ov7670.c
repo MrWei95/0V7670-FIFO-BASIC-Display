@@ -1,7 +1,6 @@
-#include "ov7670.h"
-#include "delay.h"
-#include "sccb.h"
-#include "uart.h"
+#include "OV7670.H"
+#include "DELAY.H"
+#include "SCCB.H"
 
 uint8_t  OV7670_STA = 0;
 
@@ -150,7 +149,7 @@ const u8 ov7670_init_reg[][2] =
 	{0x55, 0x00},//亮度
 	{0x56, 0x40},//对比度 0x40
 	{0x57, 0x40},//0x40,  change according to Jim's request
-///////////////////////////////////////////////////////////////////////
+
 //以下部分代码由开源电子网网友:duanzhang512 提出
 //添加此部分代码将可以获得更好的成像效果,但是最下面一行会有蓝色的抖动.
 //如不想要,可以屏蔽此部分代码.然后将:OV7670_Window_Set(12,176,240,320);
@@ -242,7 +241,6 @@ void OV7670_XCLK_OFF(void)
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
-////////////////////////////////////////////////////////////////////////////
 //OV7670功能设置
 //白平衡设置
 //0:自动
@@ -494,8 +492,10 @@ unsigned char OV7670_Init(void)
 	unsigned char i;
 	GPIO_InitTypeDef GPIO_InitStructure;
    
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO, ENABLE);	 
-	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE);//禁止JTAG,从而PA15可以做普通IO使用,否则PA15不能做普通IO!!!
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB
+		| RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO, ENABLE);	 
+	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE);
+	//禁止JTAG,从而PA15可以做普通IO使用,否则PA15不能做普通IO!!!
 	
 	GPIO_InitStructure.GPIO_Pin =  OV7670_VSYNC_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;   
@@ -527,7 +527,8 @@ unsigned char OV7670_Init(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(FIFO_RCLK_PORT, &GPIO_InitStructure);
 	
-	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15; 
+	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10
+		| GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15; 
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
  	GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -537,12 +538,12 @@ unsigned char OV7670_Init(void)
 	FIFO_OE = 0;
 	
 	SCCB_Init();        		//初始化SCCB 的IO口	   	  
-// 	printf("temp1:%d",SCCB_WR_Reg(0x12,0x80));  
-//	delay_ms(50);  
+// 	printf("temp1:%d",SCCB_WR_Reg(0x12,0x80));
+//	delay_ms(50);
 //	//读取产品型号
-// 	printf("temp2:%d",SCCB_RD_Reg(0x0a));   
-// 	printf("temp3:%d",SCCB_RD_Reg(0x0b));  
-//	
+// 	printf("temp2:%d",SCCB_RD_Reg(0x0a));
+// 	printf("temp3:%d",SCCB_RD_Reg(0x0b));
+//
 //	LCD_ShowNum(0,0,WHITE,BLACK,SCCB_WR_Reg(0x12,0x80),16);
 //	LCD_ShowNum(0,50,WHITE,BLACK,SCCB_RD_Reg(0x0a),16);
 //	LCD_ShowNum(0,100,WHITE,BLACK,SCCB_RD_Reg(0x0b),16);
@@ -552,11 +553,11 @@ unsigned char OV7670_Init(void)
 		SCCB_WR_Reg(ov7670_init_reg[i][0],ov7670_init_reg[i][1]);
 	}
 	
-	OV7670_Light_Mode(lightmode);           //白平衡设置0~4; 0
-	OV7670_Color_Saturation(saturation);    //色度设置0~4; 2
-	OV7670_Brightness(brightness);          //亮度设置0~4; 2
-	OV7670_Contrast(contrast);              //对比度设置0~4; 2
- 	OV7670_Special_Effects(effect);	        //特效设置0~6; 0
+	OV7670_Light_Mode(lightmode);			//白平衡设置0~4; 0
+	OV7670_Color_Saturation(saturation);	//色度设置0~4; 2
+	OV7670_Brightness(brightness);			//亮度设置0~4; 2
+	OV7670_Contrast(contrast);				//对比度设置0~4; 2
+ 	OV7670_Special_Effects(effect);			//特效设置0~6; 0
 	//OV7670_Window_Set(12,176,240,320);	//设置窗口
 	OV7670_Window_Set(12,176,240,320);		//设置窗口
 	//OV7670_SetWindow(184,10,128,128);
