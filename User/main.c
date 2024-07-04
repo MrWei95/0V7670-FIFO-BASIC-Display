@@ -8,6 +8,7 @@
 #include "DELAY.H"
 #include "OV7670.H"
 #include "ST7789.H"
+#include "image.h"
 #include "exti.h"
 #include "timer.h"
 void Camera_Refresh(void);
@@ -21,13 +22,20 @@ int main(void)
 	OV7670_Init();										// 摄像头初始化
 	mEXTI_Init();										// 外部中断初始化
 	TIMER_Init();										// 定时器初始化
-
+	
+	LCD_Fill(0, 0, LCD_WIDTH, LCD_HIGH, BLACK);			//屏幕涂黑
+	LCD_DrawBMP(0, 0, 198, 160, Image_95);				//显示图像
+	delay_s(3);
+	LCD_Fill(0, 0, LCD_WIDTH, LCD_HIGH, BLACK);			//屏幕再次涂黑
+	
 	while(1)
 	{
 		Camera_Refresh();								// 读取摄像头图像
 	}
 }
 
+
+//摄像头主程序
 void Camera_Refresh(void)
 {
 	uint32_t i, j;
