@@ -863,8 +863,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Hardware\OV7670\ov7670.c</PathWithFileName>
-      <FilenameWithoutPath>ov7670.c</FilenameWithoutPath>
+      <PathWithFileName>.\Hardware\OV7670\OV7670.c</PathWithFileName>
+      <FilenameWithoutPath>OV7670.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -887,8 +887,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\Hardware\ST7789\st7789.c</PathWithFileName>
-      <FilenameWithoutPath>st7789.c</FilenameWithoutPath>
+      <PathWithFileName>.\Hardware\ST7789\ST7789.c</PathWithFileName>
+      <FilenameWithoutPath>ST7789.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

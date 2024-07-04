@@ -666,9 +666,9 @@
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
-              <FileName>ov7670.c</FileName>
+              <FileName>OV7670.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Hardware\OV7670\ov7670.c</FilePath>
+              <FilePath>.\Hardware\OV7670\OV7670.c</FilePath>
             </File>
             <File>
               <FileName>SCCB.c</FileName>
@@ -676,9 +676,9 @@
               <FilePath>.\Hardware\OV7670\SCCB.c</FilePath>
             </File>
             <File>
-              <FileName>st7789.c</FileName>
+              <FileName>ST7789.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Hardware\ST7789\st7789.c</FilePath>
+              <FilePath>.\Hardware\ST7789\ST7789.c</FilePath>
             </File>
             <File>
               <FileName>timer.c</FileName>
