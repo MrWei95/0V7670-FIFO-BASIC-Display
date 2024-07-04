@@ -1,6 +1,6 @@
 大家好，我是MrWei95！
 本人项目只在GitHub开源，有任何问题都可以联系我邮箱：mrwei95@outlook.com
-演示视频：https://www.bilibili.com/video/BV1mn4y1d7QA/
+演示视频：https://www.bilibili.com/video/BV1fBhpePEE1/
 
 本项目部分代码源于互联网及他人提供。
 一开始情况非常糟糕，代码都是乱七八糟的，里面混有很多其他不需要的驱动，例如USRT，但它们在main文件中却声明了，导致我看不太懂代码。
