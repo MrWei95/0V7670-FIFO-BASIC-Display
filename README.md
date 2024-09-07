@@ -1,6 +1,6 @@
 # OV7670简易显示
 
-<img src="/demo.png" class="" title="png" style="zoom:80%;" >
+<img src="/demo.png" class="" title="png" style="zoom:60%;" >
 
 很多嵌入式项目涉及中文会使用GB2312编码，但本项目代码全部转成UTF-8编码，OV7670驱动代码中有申明一些不存在的引脚的定义（应该是为22Pin的模块设计的），可用性未知。
 
