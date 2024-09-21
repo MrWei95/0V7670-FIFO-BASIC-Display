@@ -1,6 +1,5 @@
 /*
-	本人项目只在GitHub开源！
-	有任何问题都可以联系我邮箱：mrwei95@outlook.com
+	本项目只在GitHub开源！
 	GitHub项目地址：https://github.com/MrWei95/0V7670-FIFO-BASIC-Display
 */
 
@@ -23,10 +22,10 @@ int main(void)
 	mEXTI_Init();										// 外部中断初始化
 	TIMER_Init();										// 定时器初始化
 	
-	LCD_Fill(0, 0, LCD_WIDTH, LCD_HIGH, BLACK);			//屏幕涂黑
-	LCD_DrawBMP(0, 0, 198, 160, Image_95);				//显示图像
-	delay_s(3);
-	LCD_Fill(0, 0, LCD_WIDTH, LCD_HIGH, BLACK);			//屏幕再次涂黑
+	LCD_Fill(0, 0, LCD_WIDTH, LCD_HIGH, BLACK);			// 屏幕涂黑
+	LCD_DrawBMP(0, 0, 198, 160, Image_95);				// 显示图像
+	delay_ms(500);
+	LCD_Fill(0, 0, LCD_WIDTH, LCD_HIGH, BLACK);			// 屏幕再次涂黑
 	
 	while(1)
 	{
@@ -35,7 +34,7 @@ int main(void)
 }
 
 
-//摄像头主程序
+// 摄像头主程序
 void Camera_Refresh(void)
 {
 	uint32_t i, j;
@@ -53,7 +52,8 @@ void Camera_Refresh(void)
 		FIFO_RCLK = 0;
 		FIFO_RRST = 1;									// 复位读指针结束
 		FIFO_RCLK = 1;
-		for(i = 0; i < LCD_HIGH; i++)					// 遍历每一行
+
+		for(i = 0; i < LCD_HIGH; i++)					// 遍历每一行（此时屏幕显示是反的）
 		{
 			// 读取一行的数据
 			for(j = 0; j < LCD_WIDTH; j++)
@@ -70,12 +70,13 @@ void Camera_Refresh(void)
 				imageBuffer[j] = color;					// 存储在缓冲区中
 			}
 
-			// 将缓冲区中的数据倒序写入屏幕
+			// 将缓冲区中的数据倒序写入屏幕（屏幕图像正向显示）
 			for(j = 0; j < LCD_WIDTH; j++)
 			{
 				LCD_WR_DATA_16Bit(imageBuffer[LCD_WIDTH - 1 - j]);
 			}
 		}
+
 		OV7670_STA = 0;									// 清零帧中断标记
 	}
 }
