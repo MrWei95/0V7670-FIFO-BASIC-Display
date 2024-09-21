@@ -16,7 +16,6 @@ void Camera_Refresh(void);
 int main(void)
 {
 	RCC_Configuration();								// 时钟设置
-	
 	ST7789_Init();										// 屏幕初始化
 	OV7670_Init();										// 摄像头初始化
 	mEXTI_Init();										// 外部中断初始化
@@ -34,7 +33,7 @@ int main(void)
 }
 
 
-// 摄像头主程序
+// 图像处理主程序
 void Camera_Refresh(void)
 {
 	uint32_t i, j;
